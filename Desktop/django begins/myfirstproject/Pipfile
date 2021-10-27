@@ -1,19 +1,16 @@
-[[source]]
-url = 'https://pypi.python.org/simple'
-verify_ssl = true
-name = 'pypi'
-
-[requires]
-python_version = '2.7'
-
-[packages]
-requests = { extras = ['socks'] }
-records = '>0.5.0'
-django = { git = 'https://github.com/django/django.git', ref = '1.11.4', editable = true }
-"e682b37" = {file = "https://github.com/divio/django-cms/archive/release/3.4.x.zip"}
-"e1839a8" = {path = ".", editable = true}
-pywinusb = { version = "*", os_name = "=='nt'", index="pypi"}
-
-[dev-packages]
-nose = '*'
-unittest2 = {version = ">=1.0,<3.0", markers="python_version < '2.7.9' or (python_version >= '3.0' and python_version < '3.4')"}
+asgiref==3.4.1
+boto3==1.19.4
+botocore==1.22.4
+Django==3.2.8
+django-filter==21.1
+django-storages==1.12.2
+gunicorn==20.1.0
+jmespath==0.10.0
+Pillow==8.4.0
+python-dateutil==2.8.2
+pytz==2021.3
+s3transfer==0.5.0
+six==1.16.0
+sqlparse==0.4.2
+urllib3==1.26.7
+whitenoise==5.3.0
