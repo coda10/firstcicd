@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-c#pktwt%pr-j@=3nx##2_#77+wn%^9mf$f_m78a$$uaml(-m7!
 DEBUG = False
 # DEBUG = True
 
-ALLOWED_HOSTS = ['myfirstdjangobackend.herokuapp.com/', '127.0.0.1']
+ALLOWED_HOSTS = ['myfirstdjangobackend.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
