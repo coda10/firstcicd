@@ -8,6 +8,6 @@ def testing_api(request):
         # return JsonResponse({"STATUS": f"{request}"})
         return JsonResponse({"STATUS": "Working!!"})
 
-    #if request.method == 'POST':
+    #if request.method == 'POST':,,
 
 
