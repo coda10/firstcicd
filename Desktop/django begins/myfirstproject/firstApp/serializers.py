@@ -1,5 +1,5 @@
 from django.db import models
-from rest_framework import serializers 
+from . import serializers 
 from .models import Employee
 
 class EmployeeSerializer(serializers.ModelSerializer):
