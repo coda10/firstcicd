@@ -9,5 +9,6 @@ from firstApp.views import EmployeesView
 urlpatterns = [
     # path('', views.testing_api, name='testing_api'),
     path('employees/', EmployeesView.as_view(), name='employees'),
+    path('employees/<int:pk>', EmployeesView.as_view(), name='employees'),
     path('', views.testing_api, name='testing_api'),
 ]
