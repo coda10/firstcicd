@@ -4,11 +4,10 @@
 
 from django.urls import path, include
 from firstApp import views
-from firstApp.views import EmployeesView
+from firstApp.views import EmployeesView, EmployeesDetailsView
 
 urlpatterns = [
-    # path('', views.testing_api, name='testing_api'),
     path('employees/', EmployeesView.as_view(), name='employees'),
-    path('employees/<int:pk>', EmployeesView.as_view(), name='employees'),
+    path('employees/<str:pk>', EmployeesDetailsView.as_view(), name='employees_details'),
     path('', views.testing_api, name='testing_api'),
 ]
