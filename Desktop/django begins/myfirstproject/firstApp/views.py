@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework import status
 from .models import Employee
 from .serializers import EmployeeSerializer
 
@@ -20,42 +21,49 @@ class EmployeesView(APIView):
             serializer = EmployeeSerializer(data=request.data)
             if serializer.is_valid():
                 serializer.save()
-                return Response({"message": "Employee creation Successful!"})
-            else:
-                return Response({"error": "Employee Creation Failed!"})
+                return Response({"message": "Employee creation Successful!"}, status=status.HTTP_201_CREATED)
         except:
-            raise Http404
+            return Response({"error": "Employee Creation Failed!"}, status=status.HTTP_400_BAD_REQUEST)
 
 class EmployeesDetailsView(APIView):
-        
     #get only one employee
     def get(self, request, pk, *args, **kwargs):
-        onequer = Employee.objects.get(pk=pk)
-        serializer = EmployeeSerializer(onequer)
-        return JsonResponse({"message":"Fetch Successful", "data": serializer.data})
+        try:
+            onequer = Employee.objects.get(pk=pk)
+            print(f"{onequer}")
+            if onequer:
+                serializer = EmployeeSerializer(onequer)
+                return Response({"message":"Fetch Successful", "data": serializer.data}, status=status.HTTP_200_OK)
+        except Employee.DoesNotExist:
+            return Response({"Error": "User does not exist!"}, status=status.HTTP_400_BAD_REQUEST)
 
     #Update Employee Details
     def put(self, request, pk, *args, **kwargs):
         #if request.data.get('id') is not None:
             # checkIfEmpExist = Employee.objects.get(pk=request.data.get('id'))
-            checkIfEmpExist = Employee.objects.get(pk=pk)
-            if checkIfEmpExist:
-                serializer = EmployeeSerializer(checkIfEmpExist, data=request.data)
-                if serializer.is_valid():
-                    serializer.save()
-                    return JsonResponse({"message": "Update Successful!"})
-                return JsonResponse({"Error": "Update Failed!!"})
-            return JsonResponse({"Error": "User does not exist!"})
+            try:
+                checkIfEmpExist = Employee.objects.get(pk=pk)
+                if checkIfEmpExist:
+                    serializer = EmployeeSerializer(checkIfEmpExist, data=request.data)
+                    if serializer.is_valid():
+                        serializer.save()
+                        return JsonResponse({"message": "Update Successful!"})
+                    else:
+                        return JsonResponse({"Error": "Update Failed!!"})
+            except Employee.DoesNotExist: 
+                return Response({"Error": "User does not exist!"}, status=status.HTTP_400_BAD_REQUEST)
         #return JsonResponse({"Error": "Invalid 'ID'!"})
 
     # Delete an employee 
     def delete(self, request, pk):
         #if request.data.get('id') is not None:
-            checkIfEmpExist = Employee.objects.get(pk=pk)
-            if checkIfEmpExist:
-                checkIfEmpExist.delete()
-                return JsonResponse({"message": "Deletion Successful!"})
-            return JsonResponse({"Error": "User does not exist!"})
+            try:
+                checkIfEmpExist = Employee.objects.get(pk=pk)
+                if checkIfEmpExist:
+                    checkIfEmpExist.delete()
+                    return JsonResponse({"message": "Deletion Successful!"})
+            except Employee.DoesNotExist:
+                return Response({"Error": "User does not exist!"}, status=status.HTTP_404_NOT_FOUND)
         #return JsonResponse({"Error": "Invalid 'ID'!"})
 
 
