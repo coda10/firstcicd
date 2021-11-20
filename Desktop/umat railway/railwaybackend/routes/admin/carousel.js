@@ -19,7 +19,7 @@ const {uploadFile, deleteFile, generatePublicUrl} = require('../../HelperFunctio
 
 
 //##########################################################
-//                    {Create Carousel Endpoint}
+//                   {Create Carousel Endpoint}
 //##########################################################
 router.post('/create', verifyToken, upload.single('CarouselImage'), async (req, res)=>{
     //Check if payload is not empty
