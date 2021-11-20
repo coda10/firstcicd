@@ -60,7 +60,8 @@ app.use(function(err, req, res, next) {
 
 //Connect to MongoDB 
 try {
-  mongoose.connect('mongodb://localhost:27017/raillway' , {
+  // mongoose.connect('mongodb://localhost:27017/raillway' , {
+    mongoose.connect(config.get('oncloud.db_connect') , {
   useNewUrlParser: true,
   useUnifiedTopology: true}, (err)=>{
     if(err){
