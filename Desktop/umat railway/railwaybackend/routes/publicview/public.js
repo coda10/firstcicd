@@ -13,6 +13,9 @@ const Course = require('../../Models/CoursesModel');
 //Import Carousel Model
 const Carousel = require('../../Models/CarouselModel');
 
+//Import Workshop Model
+const Workshop = require('../../Models/WorkshopModel');
+
 
 //##########################################################
 //                   {Get All Vacancy Endpoint}
@@ -93,6 +96,23 @@ router.get('/carousel', async (req, res)=>{
 
         //Send Response 
         res.send({message: "Fetch successfully!", getAllData});
+
+    } catch (error) {
+        res.status(404).send({error: error.message});
+    }
+});
+
+
+//##########################################################
+//                     {View Workshops Endpoint}
+//##########################################################
+router.get('/workshop', async (req, res)=>{
+    try {
+        //CGet Workshop
+        const getWorkshop = await Workshop.find({});
+
+       //Response
+       res.send({message: "Fetch successful", "Workshops": getWorkshop});
 
     } catch (error) {
         res.status(404).send({error: error.message});
