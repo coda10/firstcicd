@@ -1,0 +1,13 @@
+{
+    "onprem": {
+        "db_host": "localhost",
+        "db_port": 27017,
+        "db_name": "heplanner"
+    },
+    "googleDrive_default": {
+         "client_id": "705252130812-tbvklfsd3chi27o7h5e1d5sek5ns7bj8.apps.googleusercontent.com",
+         "client_secret": "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",
+         "redirect_uri": "https://developers.google.com/oauthplayground",
+         "refresh_token": "1//04xjuZZ28P66kCgYIARAAGAQSNwF-L9IrDoKpK8YlUXMPRopQ2Dcb-ZxBDC0-WvbAckW54xWDzLNj7nq53arWxKZcfSLNDKF5BWE"
+    }
+}
