@@ -63,7 +63,7 @@ router.get('/getone/:workshop_id', verifyToken, async (req, res)=>{
 
 
 //##########################################################
-//                     {Create Workshop Endpoint}
+//                  {Create Workshop Endpoint}
 //##########################################################
 router.post('/create', verifyToken, async (req, res)=>{
     //Check if payload is not empty
