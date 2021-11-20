@@ -104,7 +104,7 @@ router.get('/carousel', async (req, res)=>{
 
 
 //##########################################################
-//                     {View Workshops Endpoint}
+//                  {View Workshops Endpoint}
 //##########################################################
 router.get('/workshop', async (req, res)=>{
     try {
