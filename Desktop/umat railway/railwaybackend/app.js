@@ -16,6 +16,7 @@ const manageusers = require('./routes/admin/manageusers');
 const courses = require('./routes/admin/courses');
 const carousel = require('./routes/admin/carousel');
 const workshop = require('./routes/admin/workshop');
+const gallary = require('./routes/admin/gallary');
 const public = require('./routes/publicview/public');
 
 var app = express();
@@ -38,6 +39,7 @@ app.use('/api/admin/newsandevent', newsandevent);
 app.use('/api/admin/courses', courses);
 app.use('/api/admin/carousel', carousel);
 app.use('/api/admin/workshop', workshop);
+app.use('/api/admin/gallary', gallary);
 app.use('/api/public', public);
 
 // catch 404 and forward to error handler
