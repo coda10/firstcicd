@@ -108,7 +108,7 @@ router.get('/delete/:carousel_id', verifyToken, async (req, res)=>{
         //Get Image id
         const fileId = getData.carousel_image.image_id;
 
-        //Delete image from Google Drive
+        //Delete image from Google Drive.
         const deleteFromDrive = await deleteFile(fileId);
         if(deleteFromDrive.status !== 204) return res.status(404).send({error: "Failed to delete Image from Drive!", code: deleteFromDrive.status, statusText: deleteFromDrive.statusText});
         //console.log("Deletion Response =>: ", deleteFromDrive);
