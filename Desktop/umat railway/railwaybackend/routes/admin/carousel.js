@@ -24,7 +24,7 @@ const {uploadFile, deleteFile, generatePublicUrl} = require('../../HelperFunctio
 router.post('/create', verifyToken, upload.single('CarouselImage'), async (req, res)=>{
     //Check if payload is not empty
     if(!req.body) return res.status(404).send({error: "Invalid Payload"});
-     try {
+     try {console.log(!req.body);
          //Get file data
          const {originalname, mimetype} = req.file;
          //Get body data 
