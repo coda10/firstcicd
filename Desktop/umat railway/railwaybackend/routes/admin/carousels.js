@@ -7,7 +7,7 @@ const AdminModel = require('../../Models/AdminModel');
 //Import Carousel Model
 const CarouselModel = require('../../Models/CarouselModel');
 
-//Import Random Number Generator
+//Import Random Number Generator.
 const {verifyToken} = require('../../HelperFunctions/authToken');
 
 //Import Multer Model
