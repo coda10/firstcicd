@@ -6,7 +6,7 @@ var logger = require('morgan');
 const cors = require("cors");
 const config = require("config");
 
-//Import Mongoose.
+//Import Mongoose
 const mongoose = require("mongoose");
 
 const adminAuth = require('./routes/admin/auth');
@@ -23,7 +23,7 @@ var app = express();
 app.use(cors());
 
 // view engine setup.
-// app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(logger('dev'));
