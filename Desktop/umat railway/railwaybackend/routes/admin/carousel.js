@@ -89,7 +89,7 @@ router.get('/getall', verifyToken, async (req, res)=>{
 
 
 //##########################################################
-//                     {Delete A Carousel Endpoint}
+//                     .{Delete A Carousel Endpoint}
 //##########################################################
 router.get('/delete/:carousel_id', verifyToken, async (req, res)=>{
     try {
