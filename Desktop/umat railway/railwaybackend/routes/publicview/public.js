@@ -13,7 +13,7 @@ const Course = require('../../Models/CoursesModel');
 //Import Carousel Model
 const CarouselModel = require('../../Models/CarouselModel');
 
-//Import Workshop Model
+//Import Workshop Model.
 const Workshop = require('../../Models/WorkshopModel');
 
 

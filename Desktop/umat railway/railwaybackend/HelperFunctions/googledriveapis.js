@@ -15,7 +15,7 @@ const oauth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_U
 
 oauth2Client .setCredentials({refresh_token: REFRESH_TOKEN});
 
-//Initialize Drive
+//Initialize Drive.
 const drive = google.drive({version: 'v3', auth: oauth2Client});
 
 //Upload File
