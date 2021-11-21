@@ -14,7 +14,7 @@ const vacancies = require('./routes/admin/vacancies');
 const newsandevent = require('./routes/admin/newsandevents');
 const manageusers = require('./routes/admin/manageusers');
 const courses = require('./routes/admin/courses');
-const carousels = require('./routes/admin/carousel');
+const carousels = require('./routes/admin/carousels');
 const workshop = require('./routes/admin/workshop');
 const gallary = require('./routes/admin/gallary');
 const public = require('./routes/publicview/public');
@@ -22,7 +22,7 @@ const public = require('./routes/publicview/public');
 var app = express();
 app.use(cors());
 
-// view engine setup.
+// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 

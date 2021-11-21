@@ -11,7 +11,7 @@ const NewsandEvents = require('../../Models/Newsandevents');
 const Course = require('../../Models/CoursesModel');
 
 //Import Carousel Model
-const Carousel = require('../../Models/CarouselModel');
+const CarouselModel = require('../../Models/CarouselModel');
 
 //Import Workshop Model
 const Workshop = require('../../Models/WorkshopModel');
@@ -92,7 +92,7 @@ router.get('/coursenames', async (req, res)=>{
 router.get('/carousel', async (req, res)=>{
     try {
         //Get Data
-        const getAllData = await Carousel.find({}, {carousel_image: {image_id: 0}, createdAt: 0, updatedAt: 0, __v: 0});
+        const getAllData = await CarouselModel.find({}, {carousel_image: {image_id: 0}, createdAt: 0, updatedAt: 0, __v: 0});
 
         //Send Response 
         res.send({message: "Fetch successfully!", getAllData});
